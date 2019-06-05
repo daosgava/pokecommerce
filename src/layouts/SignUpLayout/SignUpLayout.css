@@ -1,0 +1,27 @@
+.sign-up-container{
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 20px;
+}
+
+.hide{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+.option{
+    padding: 20px;
+    width: 100%;
+}
+
+.option button {
+    outline:none;
+}
+
+.option span {
+    left:0;
+    outline:none;
+}
