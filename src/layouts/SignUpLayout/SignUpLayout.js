@@ -14,16 +14,13 @@ class SignUpLayout extends React.Component {
     }
     render(){
         return( <div className='sign-up-container'>
-                    <div className={`${this.state.showOrHide ? 'hide' : 'show'}`}>
-                        {this.props.login}
+                    <div className='login-form-container nes-container is-rounded with-title'>
+                        {
+                            this.state.showOrHide ? this.props.register : this.props.login 
+                        }
                     </div>
-                    <div className={`${this.state.showOrHide ? 'show' : 'hide'}`}>
-                        {this.props.register}
-                    </div>  
-                    <div className='option'>                  
-                        <button className='nes-badge' onClick={this.showOrHide}>
-                            <span className='is-primary'>{this.state.showOrHide ? 'Go to LOGIN' : 'Go to REGISTER'}</span>
-                        </button>
+                    <div className='option'>  
+                        <button type="button" className="nes-btn is-primary" onClick={this.showOrHide}>{this.state.showOrHide ? 'Go to LOGIN' : 'Go to REGISTER'}</button>                
                     </div>
                 </div> );
     }

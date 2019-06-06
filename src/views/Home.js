@@ -15,12 +15,9 @@ class Home extends React.Component{
     handleLoginUser = (data)=>{
         console.log('user data: ',data);
     }
-    componentDidMount(){
-        //console.log(this.state.users);
-    }
     render (){
         return( <MainLayout>
-                    <SignUpLayout login={ <LoginForm title='LOGIN' loginUser={this.handleLoginUser}/> } register={ <RegisterForm saveUser={this.handleSaveUser}/> } /> 
+                    <SignUpLayout login={ <LoginForm loginUser={this.handleLoginUser}/> } register={ <RegisterForm saveUser={this.handleSaveUser}/> } /> 
                 </MainLayout> );
     }
 }

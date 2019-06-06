@@ -3,13 +3,10 @@ import './MainInput.css'
 
 class MainInput extends React.Component{
     render(){
-        const { labelText, inputType, inputName, onChangeMethod, inputValue, defaultValue, isRequired } = this.props;
+        const { label, type, name, isRequired, onChangeMethod, inputValue } = this.props;
         return( <div className='main-input nes-field'>
-                    <label>{labelText}</label>
-                    {!onChangeMethod && !defaultValue &&
-                        <p>Error, not enought properties!</p>
-                    }
-                    <input className='nes-input' type={inputType} name={inputName} onChange={onChangeMethod} value={!onChangeMethod ? (!defaultValue ? 'A defaultValue is required or a onChangeMethod' : defaultValue ) : inputValue} readOnly={onChangeMethod ? false : true} required={isRequired ? true: false}/>
+                    <label>{label}</label>
+                    <input className='nes-input' type={type} name={name} onChange={onChangeMethod} value={inputValue} required={isRequired ? true: false}/>
                 </div> );
     }
 }
