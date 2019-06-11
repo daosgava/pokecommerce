@@ -1,0 +1,12 @@
+.cell {
+    margin: 1em;
+    padding: 4rem;
+    text-align: center;
+}
+
+.bottom-down{
+    bottom:0;
+    margin: 0;
+    position:absolute;
+    right:0;
+}

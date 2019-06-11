@@ -14,7 +14,7 @@ class LoginForm extends React.Component{
     }
     render(){
         return( <React.Fragment>
-                    <BaseForm title='LOGIN' onSubmitMethod={this.handleSubmit} configFormData={LOGIN_FORM_CONFIG} errorsLog={this.state.errorsLog} buttonText='Enter' handleData={this.loginUser}/>
+                    <BaseForm title='LOGIN' configFormData={LOGIN_FORM_CONFIG} buttonText='Enter' handleData={this.loginUser}/>
                 </React.Fragment> );
     }
 }

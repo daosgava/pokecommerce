@@ -4,20 +4,16 @@ import RegisterForm from '../components/RegisterForm/RegisterForm';
 import registeredUsers from '../data/Users.json';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 import SignUpLayout from '../layouts/SignUpLayout/SignUpLayout';
+import PokeItemsList from '../containers/PokeItemsList'
 
 class Home extends React.Component{
     state = {
         users:registeredUsers
     }
-    handleSaveUser = (data)=>{
-        console.log('user data: ',data);
-    }
-    handleLoginUser = (data)=>{
-        console.log('user data: ',data);
-    }
     render (){
         return( <MainLayout>
-                    <SignUpLayout login={ <LoginForm loginUser={this.handleLoginUser}/> } register={ <RegisterForm saveUser={this.handleSaveUser}/> } /> 
+                    <SignUpLayout login={ <LoginForm/> } register={ <RegisterForm/> } /> 
+                    <PokeItemsList/>
                 </MainLayout> );
     }
 }

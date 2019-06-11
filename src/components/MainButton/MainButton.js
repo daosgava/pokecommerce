@@ -3,9 +3,9 @@ import './MainButton.css'
 
 class MainButton extends React.Component {
     render(){
-        const {text} = this.props;
+        const {text, extraClasses} = this.props;
         return( 
-            <button className='main-button nes-btn'>{text}</button>
+            <button className={extraClasses ? `main-button nes-btn ${extraClasses}` : 'main-button nes-btn'}>{text}</button>
         );
     }
 }
