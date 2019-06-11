@@ -1,14 +1,15 @@
 import React from 'react';
-import MainButton from '../MainButton/MainButton';
 import './PokeItem.css';
 
 class PokeItem extends React.Component{
     render(){
-        let {name, description, image} = this.props;
-        return( <div class='cell nes-container with-title is-centered'>
-                    <p class="title">{name}  <img src={image} alt={name}/></p>
+        const {id, name, description, image, addToCart, removeFromCart} = this.props;
+        return( <div className='cell nes-container with-title is-centered'>
+                    <p className="title">{name}  <img src={image} alt={name}/></p>
                     <small>{description.short_effect}</small>
-                    <MainButton extraClasses='bottom-down' text='Add'/>
+                    {
+                        addToCart ? <button className='main-button nes-btn bottom-down' onClick={()=>addToCart({id:id, name:name, description:description, image:image})}>Add</button> : <button className='main-button nes-btn bottom-down' onClick={()=>removeFromCart({id:id})}>Remove</button>
+                    }
                 </div> );
     }
 }

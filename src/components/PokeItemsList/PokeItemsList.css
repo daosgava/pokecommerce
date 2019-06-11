@@ -1,7 +1,11 @@
 .pokelist-container {
-    height: 90vh;
+    height: auto;
     margin: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+}
+
+.section-container h3{
+    text-align: center;
 }

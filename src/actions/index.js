@@ -9,6 +9,24 @@ export const getAllPokeItems = (data) => {
   }
 }
 
+export const addPokeItemToCart = (data) => {
+  return {
+    type: 'ADD_POKEITEM_TO_CART',
+    payload: {
+      results: data
+    }
+  }
+}
+
+export const removePokeItemFromCart = (data) => {
+  return {
+    type: 'REMOVE_POKEITEM_FROM_CART',
+    payload: {
+      results: data
+    }
+  }
+}
+
 export const catchPokeItems = (error)=>{
   return{
     type:'ERROR_POKEITEMS',
