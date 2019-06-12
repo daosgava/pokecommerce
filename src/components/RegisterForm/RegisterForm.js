@@ -13,7 +13,7 @@ class RegisterForm extends React.Component{
     }
     render(){ 
         return( <React.Fragment>
-                    <BaseForm title='REGISTER' configFormData={REGISTER_FORM_CONFIG} buttonText='Enter' handleData={this.saveData}/>
+                    <BaseForm title='REGISTER' configFormData={REGISTER_FORM_CONFIG} buttonText='Submit' handleData={this.saveData}/>
                 </React.Fragment> );
     }
 }

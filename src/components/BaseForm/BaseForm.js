@@ -52,7 +52,7 @@ class BaseForm extends React.Component{
                                                                 
                         }
                         <ShowErrors errors = {this.state.errorsLog} />
-                        <MainButton text={buttonText}/>
+                        <MainButton extraClasses='is-primary' text={buttonText}/>
                     </form>
                 </React.Fragment> );
     }
