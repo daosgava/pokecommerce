@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { logoutUser } from '../actions';
+import { logoutUser, removeAllPokeItemsFromCart } from '../actions';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
 const mapStateToProps = (state)=>{
@@ -8,7 +8,8 @@ const mapStateToProps = (state)=>{
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({
-    logoutUser
+    logoutUser,
+    removeAllPokeItemsFromCart
 }, dispatch);
 
 export default connect(mapStateToProps,mapDispatchToProps)(MainLayout);

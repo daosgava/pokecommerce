@@ -27,7 +27,7 @@ class MainLayout extends React.Component {
                         <p className='main-title'>Pokemart </p>
                         
                         <div className='navbar'>
-                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'>Login</Link></> : <Link to='' onClick={()=>this.props.logoutUser()}> Logout</Link>}
+                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'>Login</Link></> : <Link to='/login' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }> Logout</Link>}
                             
                             {found ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
                         </div>

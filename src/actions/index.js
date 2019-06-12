@@ -78,10 +78,9 @@ export const loginUser = (data) => {
   }
 }
 
-export const logoutUser = (dispatch) => {
-  dispatch(removeAllPokeItemsFromCart());
+export const logoutUser = () => {
   return {
-    type: 'LOGIN_USER',
+    type: 'LOGOUT_USER',
     payload: {
       results: ''
     }
