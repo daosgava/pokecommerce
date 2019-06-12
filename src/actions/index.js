@@ -27,6 +27,15 @@ export const removePokeItemFromCart = (data) => {
   }
 }
 
+export const removeAllPokeItemsFromCart = () => {
+  return {
+    type: 'REMOVE_ALL_POKEITEMS_FROM_CART',
+    payload: {
+      results: ''
+    }
+  }
+}
+
 export const catchPokeItems = (error)=>{
   return{
     type:'ERROR_POKEITEMS',
@@ -69,7 +78,8 @@ export const loginUser = (data) => {
   }
 }
 
-export const logoutUser = () => {
+export const logoutUser = (dispatch) => {
+  dispatch(removeAllPokeItemsFromCart());
   return {
     type: 'LOGIN_USER',
     payload: {

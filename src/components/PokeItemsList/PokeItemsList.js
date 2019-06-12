@@ -30,7 +30,7 @@ class PokeItemsList extends React.Component{
                             <p className='section-title'>CART</p>
                             <div className='cart-container'>
                                 {
-                                    addedToCart.length > 0 ? addedToCart.map((item)=><PokeItem key={item.id} {...item} removeFromCart={this.handleRemoveFromCart} />) : ''
+                                    addedToCart.length > 0 ? addedToCart.map((item, index)=><PokeItem key={index} {...item} removeFromCart={this.handleRemoveFromCart} />) : ''
                                 }
                             </div>
                         </div> 

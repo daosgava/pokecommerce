@@ -18,7 +18,6 @@ class MainLayout extends React.Component {
     }
     render(){
         const {found} = this.props;
-        console.log(this.props);
         return( <React.Fragment>
                     <div className='top-container'>
                         <p className='header-title'><i className='nes-pokeball'></i> Bootcamp <i className="nes-bulbasaur"></i></p>
@@ -28,7 +27,7 @@ class MainLayout extends React.Component {
                         <p className='main-title'>Pokemart </p>
                         
                         <div className='navbar'>
-                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'>Login</Link></> : <Link onClick={()=>this.props.logoutUser()}> Logout</Link>}
+                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'>Login</Link></> : <Link to='' onClick={()=>this.props.logoutUser()}> Logout</Link>}
                             
                             {found ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
                         </div>
