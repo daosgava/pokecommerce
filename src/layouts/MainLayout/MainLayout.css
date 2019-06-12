@@ -1,6 +1,7 @@
 .top-container {
-    background-color: #eaf1f7;
+    background-color: #0057a2;
     padding: 30px;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -35,6 +36,7 @@
 .main-title{
     display:inline-block;
     font-size: 24px;
+    color: #ffffff;
     padding-top: 10px;
     text-align: center;
     width: 10%;
