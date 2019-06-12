@@ -1,6 +1,67 @@
-.main-title{
-    font-size: 24px;
-    padding: 10px;
+.top-container {
+    background-color: #eaf1f7;
+    padding: 30px;
     text-align: center;
+}
+
+.header {
+    padding: 10px 16px;
+    background: #e76e55;
+    color: #f1f1f1;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 99999;
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
+
+.header-title{
+    display:inline-block;
+    font-size: 40px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.main-title{
+    display:inline-block;
+    font-size: 24px;
+    padding-top: 10px;
+    text-align: center;
+    width: 10%;
+}
+
+.navbar {
+    float: right;
+    overflow: auto;
+    width: 80%;
+}
+
+.navbar a {
+    float: right;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    color: #ffbfbf;
+}
+
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
 }

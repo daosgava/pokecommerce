@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './views/Home';
+import MainLayout from './containers/MainLayout';
+import Routes from './routes/Routes';
 
-class Routes extends React.Component{
-  render(){
-    return( <Router>
-                <Route exact path='/' component={Home}/>
-            </Router> );
-  }
+function App() {
+  return( 
+          <React.Fragment>
+            <MainLayout/>
+            <Routes/>
+          </React.Fragment> );
 }
 
-export default Routes;
+export default App;

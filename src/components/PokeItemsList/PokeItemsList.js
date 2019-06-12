@@ -15,19 +15,26 @@ class PokeItemsList extends React.Component{
     render(){
         const pokeItems = this.props.pokeItems;
         const addedToCart = this.props.addedToCart;
-        return( <div className="section-container">
-                    <h3>ITEMS AVAILABLE</h3>
-                    <div className='pokelist-container'>
-                        {
-                            pokeItems && pokeItems.map((item)=><PokeItem key={item.id} {...item} addToCart={this.handleAddToCart}/>)
-                        }
+        return( <div className="section-container outer-container">
+                    <div id="content">
+                        <p className='section-title'>ITEMS AVAILABLE</p>
+                        <div className='pokelist-container'>
+                            {
+                                pokeItems && pokeItems.map((item)=><PokeItem key={item.id} {...item} addToCart={this.handleAddToCart}/>)
+                            }
+                        </div>
                     </div>
-                    <h3>ITEMS ADDED TO CART</h3>
-                    <div className='pokelist-container'>
-                        {
-                            addedToCart.length > 0 ? addedToCart.map((item)=><PokeItem key={item.id} {...item} removeFromCart={this.handleRemoveFromCart} />) : <h4>There are not items.</h4>
-                        }
-                    </div>
+                    {   
+                        addedToCart.length > 0 &&
+                        <div id="sidebar">
+                            <p className='section-title'>CART</p>
+                            <div className='cart-container'>
+                                {
+                                    addedToCart.length > 0 ? addedToCart.map((item)=><PokeItem key={item.id} {...item} removeFromCart={this.handleRemoveFromCart} />) : ''
+                                }
+                            </div>
+                        </div> 
+                    }
                 </div> );
     }
 }

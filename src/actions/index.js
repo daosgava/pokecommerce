@@ -50,3 +50,30 @@ export const fetchPokeItems = ()=> {
     .catch((err)=>dispatch(catchPokeItems(err)))
   }
 }
+
+export const registerUser = (data) => {
+  return {
+    type: 'REGISTER_USER',
+    payload: {
+      results: data
+    }
+  }
+}
+
+export const loginUser = (data) => {
+  return {
+    type: 'LOGIN_USER',
+    payload: {
+      results: data
+    }
+  }
+}
+
+export const logoutUser = () => {
+  return {
+    type: 'LOGIN_USER',
+    payload: {
+      results: ''
+    }
+  }
+}
