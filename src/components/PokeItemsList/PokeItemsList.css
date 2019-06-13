@@ -11,12 +11,14 @@
 	display: table-cell;
 	width: 30%;
 	vertical-align: top;
+	padding-top:16px;
 }
 
 #content {
 	display: table-cell;
 	max-width: 70%;
 	vertical-align: top;
+	padding-top:16px;
 }
 
 .pokelist-container {
@@ -37,3 +39,15 @@
 	text-align: center;
 	width:100%;
 }
+
+.fixed {
+	position: fixed;
+    width: 35%;
+    bottom: -16px;
+    text-align: center;
+    background-color: #ffffff;
+    border-top: 4px solid #000000;
+    z-index: 10000;
+    padding-top: 26px;
+    padding-bottom: 26px;
+} 
