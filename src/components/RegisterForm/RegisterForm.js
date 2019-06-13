@@ -4,9 +4,6 @@ import {REGISTER_FORM_CONFIG} from './RegisterFormConfig';
 import './RegisterForm.css';
 
 class RegisterForm extends React.Component{
-    state = {
-        user: {}
-    }
     saveData = (data)=>{
         this.props.registerUser(data);
         this.props.redirect('/login');

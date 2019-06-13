@@ -52,7 +52,7 @@ export const fetchPokeItems = ()=> {
       promises = items.map((item)=>getItemDetail(item.url))
       Promise.all(promises)
       .then((item)=>{
-        data = item.map((details)=>({id:details.id, name:details.name, description:details.effect_entries[0], image:details.sprites.default}))
+        data = item.map((details)=>({id:details.id, name:details.name, description:details.effect_entries[0], image:details.sprites.default, cost:details.cost}))
         dispatch(getAllPokeItems(data));
       })
     })

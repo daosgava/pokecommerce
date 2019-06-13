@@ -7,16 +7,20 @@ import FormValidation from '../../utils/FormValidation';
 class BaseForm extends React.Component{
     constructor(props) {
         super(props);
+        const model = this.createModel();
+        this.state = { 
+            data : model,
+            errorsLog : null
+        }
+    }
+    createModel = () => {
         const fields = this.props.configFormData.map((item)=>item.name);
         let model = null;
         for(let i = 0; i < fields.length; i++){
             const field = fields[i];
             model = {...model,[field]:''};
         }
-        this.state = { 
-            data : model,
-            errorsLog : null
-        }
+        return model;
     }
     handleChange = (e)=>{;
         const {name, value} = e.target;
