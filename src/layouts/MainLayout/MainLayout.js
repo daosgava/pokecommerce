@@ -4,30 +4,29 @@ import './MainLayout.css';
 
 class MainLayout extends React.Component {
     componentDidMount(){
-        window.onscroll = function() {fixedHeader()};
-        var header = document.getElementById("myHeader");
-        var sticky = header.offsetTop;
-
-        function fixedHeader() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
+        window.onscroll = () => this.fixedHeader();
+    }
+    fixedHeader = () => {
+        const header = document.getElementById("myHeader");
+        const sticky = header.offsetTop;
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
         }
     }
     render(){
         const {found} = this.props;
         return( <React.Fragment>
                     <div className='top-container'>
-                        <p className='header-title'><i className='nes-pokeball'></i> Bootcamp <i className="nes-bulbasaur"></i></p>
+                        <p className='header-title'><i className='nes-pokeball'></i> Pokemart <i className="nes-bulbasaur"></i></p>
                     </div>
                     
                     <div className='header' id='myHeader'>
-                        <p className='main-title'>Pokemart</p>
+                        <div className='logo'><i className="nes-logo"></i></div>
                         
                         <div className='navbar'>
-                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'>Login</Link></> : <Link to='/login' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }> Logout</Link>}
+                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'><i className="fa fa-user" aria-hidden="true"></i> Login</Link></> : <Link to='/login' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Link>}
                             
                             {found ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
                         </div>
