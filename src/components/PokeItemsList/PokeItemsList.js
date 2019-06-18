@@ -1,11 +1,10 @@
 import React, {lazy, Suspense} from 'react';
 import MainButton from '../MainButton/MainButton';
 import './PokeItemsList.css';
-import MyErrorBoundary from '../../utils/MyErrorBoundary';
 const PokeItem = lazy(() => import('../PokeItem/PokeItem'));
 
 class PokeItemsList extends React.Component{
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchPokeItems();
     }
     handleAddToCart = (item)=>{
@@ -18,8 +17,7 @@ class PokeItemsList extends React.Component{
         const pokeItems = this.props.pokeItems;
         const addedToCart = this.props.addedToCart;
         let total = 0;
-        return( <MyErrorBoundary>
-                    <Suspense fallback={<i className="fa fa-cog fa-spin fa-3x fa-fw"></i>}>
+        return( <Suspense fallback={<i className="fa fa-cog fa-spin fa-3x fa-fw"></i>}>
                         <div className="section-container outer-container">
                             <div id="content">
                                 <p className='section-title'>ITEMS AVAILABLE</p>
@@ -45,8 +43,7 @@ class PokeItemsList extends React.Component{
                                 </div> 
                             }
                         </div>
-                    </Suspense>
-                </MyErrorBoundary> );
+                    </Suspense> );
     }
 }
 

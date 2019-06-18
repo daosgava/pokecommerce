@@ -15,7 +15,6 @@ class LoginForm extends React.Component{
         }else{
             document.getElementById('dialog-rounded').showModal(); 
         }
-
     }
     render(){
         const {users} = this.props;
