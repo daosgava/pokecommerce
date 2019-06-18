@@ -4,13 +4,10 @@ import SignUpLayout from '../layouts/SignUpLayout/SignUpLayout';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component{
-    handleRedirect = (path) => {
-        this.props.history.push(path);
-    }
     render (){
         return( <React.Fragment>
                     <SignUpLayout>
-                        <LoginForm redirect={this.handleRedirect}/>
+                        <LoginForm/>
                     </SignUpLayout>
                 </React.Fragment> );
     }

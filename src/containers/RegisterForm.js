@@ -4,7 +4,7 @@ import { registerUser } from '../actions';
 import RegisterForm from '../components/RegisterForm/RegisterForm';
 
 const mapStateToProps = (state)=>{
-    return state.users;
+    return state;
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({

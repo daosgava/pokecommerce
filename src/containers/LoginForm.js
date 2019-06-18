@@ -4,7 +4,7 @@ import { loginUser } from '../actions';
 import LoginForm from '../components/LoginForm/LoginForm';
 
 const mapStateToProps = (state)=>{
-    return state.users;
+    return state;
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({

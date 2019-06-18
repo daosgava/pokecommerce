@@ -3,10 +3,11 @@ import PokeItemsList from '../containers/PokeItemsList';
 
 class Home extends React.Component{
     render (){
-        const {found} = this.props;
+        const {users} = this.props;
+        const loggedInUser = Object.keys(users.loggedInUser).length > 0;
         return( <React.Fragment>
                 { 
-                    found ? <PokeItemsList/> : this.props.history.push('/login')
+                    loggedInUser ? <PokeItemsList/> : this.props.history.push('/login')
                 }
                 </React.Fragment>);
         }

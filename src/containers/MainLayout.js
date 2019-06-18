@@ -4,7 +4,7 @@ import { logoutUser, removeAllPokeItemsFromCart } from '../actions';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
 const mapStateToProps = (state)=>{
-    return state.users;
+    return state;
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({

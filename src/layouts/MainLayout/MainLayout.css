@@ -43,15 +43,23 @@
 }
 
 .logo{
-    padding: 0px 20px;
-    width: 10%;
     display: inline-block;
+    height: 44px;
+    padding: 0px 20px;
+}
+
+.user-info {
+    display:inline-block;
+    height: 100%;
+}
+
+.user-info p {
+    margin: 0;
 }
 
 .navbar {
     float: right;
     overflow: auto;
-    width: 80%;
 }
 
 .navbar i {
@@ -60,11 +68,11 @@
 
 .navbar a {
     float: right;
-    padding: 10px 18px;
+    padding: 20px 15px 0px 0px;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-color: #d8d8d8 #d1d1d1 #bababa;
 }
 
 .navbar a:hover {

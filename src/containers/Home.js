@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Home from '../views/Home';
 
 const mapStateToProps = (state)=>{
-    return state.users;
+    return state;
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({

@@ -16,19 +16,24 @@ class MainLayout extends React.Component {
         }
     }
     render(){
-        const {found} = this.props;
+        const {users} = this.props;
+        const loggedInUser = Object.keys(users.loggedInUser).length > 0;
         return( <React.Fragment>
                     <div className='top-container'>
-                        <p className='header-title'><i className='nes-pokeball'></i> Pokemart <i className="nes-bulbasaur"></i></p>
+                        <p className='header-title'><i className='nes-pokeball'></i> Pokemart <i className='nes-bulbasaur'></i></p>
                     </div>
                     
                     <div className='header' id='myHeader'>
-                        <div className='logo'><i className="nes-logo"></i></div>
-                        
+                        <div className='logo'><i className='nes-logo'></i></div>
+                        <div className='user-info'><p>{ loggedInUser && `Welcome ${ users.loggedInUser.username }!`}</p></div>
                         <div className='navbar'>
-                            {!found ? <><Link to='/Register'> Register</Link> <Link to='/Login'><i className="fa fa-user" aria-hidden="true"></i> Login</Link></> : <Link to='/login' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Link>}
+                            {!loggedInUser ? <>
+                                                <Link to='/Register'><i className='fa fa-user-plus' aria-hidden='true'></i> Register</Link> 
+                                                <Link to='/Login'><i className='fa fa-sign-in' aria-hidden='true'></i> Login</Link></> 
+                                                : 
+                                                <Link to='/' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }><i className='fa fa-sign-out' aria-hidden='true'></i> Logout</Link>}
                             
-                            {found ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
+                            {loggedInUser ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
                         </div>
                     </div>
                     
