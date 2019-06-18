@@ -11,7 +11,8 @@ class LoginForm extends React.Component{
         const {users} = this.props;
         const existingUser = users.registeredUsers.find((user)=>user.username === data.username && user.password === data.password);
         if(existingUser){
-            this.props.loginUser(data)
+            this.props.loginUser(data);
+            this.props.redirect('/');
         }else{
             document.getElementById('dialog-rounded').showModal(); 
         }
@@ -23,7 +24,9 @@ class LoginForm extends React.Component{
                 <React.Fragment>
                     <BaseForm title='LOGIN' configFormData={LOGIN_FORM_CONFIG} buttonText='Enter' handleData={this.loginUser}/>
                     <Dialog text='Invalid users, Try again!' buttonText='close' />
-                </React.Fragment> : <Redirect to='/'></Redirect>);
+                </React.Fragment> 
+                : 
+                <Redirect to={'/'} />);
     }
 }
 

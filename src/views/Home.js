@@ -1,13 +1,14 @@
 import React from 'react';
 import PokeItemsList from '../containers/PokeItemsList';
+import { Redirect } from 'react-router-dom';
 
 class Home extends React.Component{
     render (){
-        const {users} = this.props;
-        const loggedInUser = Object.keys(users.loggedInUser).length > 0;
+        const loggedInUser = Object.keys(this.props.users.loggedInUser).length > 0;
+        if (!loggedInUser) return <Redirect to={'/login'} />;
         return( <React.Fragment>
                 { 
-                    loggedInUser ? <PokeItemsList/> : this.props.history.push('/login')
+                    loggedInUser && <PokeItemsList/>
                 }
                 </React.Fragment>);
         }

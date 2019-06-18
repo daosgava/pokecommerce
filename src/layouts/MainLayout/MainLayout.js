@@ -15,6 +15,10 @@ class MainLayout extends React.Component {
             header.classList.remove("sticky");
         }
     }
+    logOutUser = () =>{
+        this.props.logoutUser();
+        this.props.removeAllPokeItemsFromCart();
+    }
     render(){
         const {users} = this.props;
         const loggedInUser = Object.keys(this.props.users.loggedInUser).length > 0;
@@ -32,7 +36,7 @@ class MainLayout extends React.Component {
                                                 <Link to='/Login'><i className='fa fa-sign-in' aria-hidden='true'></i> Login</Link>
                                              </> 
                                                 : 
-                                             <Link to='/' onClick={()=>{this.props.logoutUser();this.props.removeAllPokeItemsFromCart();} }><i className='fa fa-sign-out' aria-hidden='true'></i> Logout</Link>}
+                                             <Link to='/' onClick={this.logOutUser}><i className='fa fa-sign-out' aria-hidden='true'></i> Logout</Link>}
                             
                             {loggedInUser ? <Link to='/'><i className="fa fa-fw fa-home"></i> Pokeitems</Link> :''}
                         </div>
