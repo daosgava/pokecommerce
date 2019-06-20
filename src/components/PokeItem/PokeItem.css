@@ -28,4 +28,7 @@
 
 .quantity-description{
     display: inline;
+    padding: 6px 6px;
+    border-top: 0.5px solid #bababa;
+    border-bottom: 0.5px solid #bababa;
 }
