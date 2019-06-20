@@ -18,6 +18,15 @@ export const addPokeItemToCart = (data) => {
   }
 }
 
+export const updatePokeItemInCart = (data) => {
+  return {
+    type: 'UPDATE_POKEITEM_IN_CART',
+    payload: {
+      results: data
+    }
+  }
+}
+
 export const removePokeItemFromCart = (data) => {
   return {
     type: 'REMOVE_POKEITEM_FROM_CART',

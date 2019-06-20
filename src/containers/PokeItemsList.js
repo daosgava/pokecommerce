@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchPokeItems, addPokeItemToCart, removePokeItemFromCart } from '../actions';
+import { fetchPokeItems, addPokeItemToCart, removePokeItemFromCart, updatePokeItemInCart } from '../actions';
 import PokeItemsList from '../components/PokeItemsList/PokeItemsList';
 
 const mapStateToProps = (state)=>{
@@ -13,7 +13,8 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=> bindActionCreators({
     fetchPokeItems,
     addPokeItemToCart,
-    removePokeItemFromCart
+    removePokeItemFromCart,
+    updatePokeItemInCart
 }, dispatch);
 
 export default connect(mapStateToProps,mapDispatchToProps)(PokeItemsList);

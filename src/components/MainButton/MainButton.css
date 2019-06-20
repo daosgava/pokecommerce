@@ -1,3 +1,8 @@
 .main-button{
     margin:20px;
 }
+
+.main-button i {
+    padding: 0 4px;
+    vertical-align: text-bottom;
+}

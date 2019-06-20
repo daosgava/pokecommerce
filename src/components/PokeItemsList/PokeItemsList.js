@@ -13,6 +13,9 @@ class PokeItemsList extends React.Component{
     handleRemoveFromCart = (item)=>{
         this.props.removePokeItemFromCart(item);
     }
+    handleUpdatePokeItemInCart = (item)=>{
+        this.props.updatePokeItemInCart(item);
+    }
     render(){
         const pokeItems = this.props.pokeItems;
         const addedToCart = this.props.addedToCart;
@@ -34,12 +37,12 @@ class PokeItemsList extends React.Component{
                                     <div className='cart-container'>
                                         {
                                             addedToCart.length > 0 ? addedToCart.map((item, index)=>{
-                                                                    total +=item.cost; 
-                                                                    return<PokeItem key={index} {...item} removeFromCart={this.handleRemoveFromCart} /> }) 
+                                                                    total +=item.cost*item.quantity; 
+                                                                    return<PokeItem key={index} {...item} removeFromCart={this.handleRemoveFromCart} updateCart={this.handleUpdatePokeItemInCart}/> }) 
                                                                     : ''
                                         }
                                     </div>
-                                    <p className='fixed'>Total: {total} <i className="nes-icon coin is-small"></i> <MainButton text='Pay' extraClasses='is-success'/></p>
+                                    <p className='fixed'>Total: {total} <i className="nes-icon coin is-small"></i> <MainButton text='Pay' icon={<><i className="fa fa-money" aria-hidden="true"></i></>} extraClasses='is-success'/></p>
                                 </div> 
                             }
                         </div>

@@ -29,7 +29,7 @@ class MainLayout extends React.Component {
                     
                     <div className='header' id='myHeader'>
                         <div className='logo'><i className='nes-logo'></i></div>
-                        <div className='user-info'><p>{ this.loggedInUser && `Welcome ${ users.loggedInUser.username }!`}</p></div>
+                        <div className='user-info'><p>{ loggedInUser && `Welcome ${ users.loggedInUser.username }!`}</p></div>
                         <div className='navbar'>
                             {!loggedInUser ? <>
                                                 <Link to='/Register'><i className='fa fa-user-plus' aria-hidden='true'></i> Register</Link> 

@@ -16,3 +16,16 @@
     margin-top:20px;
     margin-bottom: 0;
 }
+
+.quantity-container{
+    position: absolute;
+    bottom: 0px;
+}
+
+.minus-button{
+    display: inline;
+}
+
+.quantity-description{
+    display: inline;
+}
