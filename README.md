@@ -1,3 +1,3 @@
 ## Pokecommerce
 
-This project was made by Daniel Garcia, 2019.
+Pokemart created by Daniel Garcia, 2019.
