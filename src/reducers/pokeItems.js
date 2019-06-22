@@ -1,8 +1,8 @@
-const pokeItems = (state = {all:[],addedToCart:[],error:[]}, action) => {
+const pokeItems = (state = {all:[],addedToCart:[],error:[], areFetched: false}, action) => {
     switch (action.type) {
       case 'GET_ALL_POKEITEMS':
         return{ ...state,               
-                all: action.payload.results };
+                all: action.payload.results, areFetched:true };
       case 'ADD_POKEITEM_TO_CART':
         let newAddedToCart = state.addedToCart;
         if(newAddedToCart.length > 0){

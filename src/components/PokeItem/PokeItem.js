@@ -45,6 +45,15 @@ class PokeItem extends React.Component{
             });
         }
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.quantity !== nextProps.quantity) {
+          return true;
+        }
+        if (this.state.quantity !== nextState.quantity) {
+          return true;
+        }
+        return false;
+      }
     render(){
         const {id, name, description, image, cost, addToCart, removeFromCart} = this.props;
         return( <div className='cell nes-container with-title is-centered'>

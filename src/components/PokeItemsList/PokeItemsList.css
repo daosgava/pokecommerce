@@ -49,3 +49,8 @@
     border-top: 4px solid #000000;
     z-index: 10000;
 } 
+
+.loading {
+    text-align: center;
+    padding-top: 16%;
+}

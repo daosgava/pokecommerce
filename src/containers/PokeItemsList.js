@@ -6,7 +6,8 @@ import PokeItemsList from '../components/PokeItemsList/PokeItemsList';
 const mapStateToProps = (state)=>{
     return {
         pokeItems:state.pokeItems.all,
-        addedToCart:state.pokeItems.addedToCart
+        addedToCart:state.pokeItems.addedToCart,
+        areFetched:state.pokeItems.areFetched
     }
 }
 
