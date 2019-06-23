@@ -5,7 +5,7 @@ const initialUser = {
     email: "daosgava.garcia@gmail.com",
     password: "123",
   };
-const users = (state = {registeredUsers:[initialUser], loggedInUser:{}, error:[]}, action) => {
+const users = (state = {registeredUsers:[initialUser], loggedInUser:[], error:[]}, action) => {
     switch (action.type) {
         case 'REGISTER_USER':
             const newUser = {firstname : action.payload.results.firstname,
@@ -13,7 +13,8 @@ const users = (state = {registeredUsers:[initialUser], loggedInUser:{}, error:[]
                 username : action.payload.results.username,
                 email : action.payload.results.email,
                 password : action.payload.results.password };
-            return { ...state, registeredUsers: [...state.registeredUsers, newUser],  loggedInUser:newUser, loggedIn:true };
+
+            return { ...state, registeredUsers: [...state.registeredUsers, newUser],  loggedInUser:[newUser]};
         case 'LOGIN_USER':
             const userFound = state.registeredUsers.filter((user)=>{
                 if(user.username === action.payload.results.username && user.password === action.payload.results.password){
@@ -24,9 +25,9 @@ const users = (state = {registeredUsers:[initialUser], loggedInUser:{}, error:[]
                 }
                 return null;
             });
-            return { ...state, loggedInUser: userFound.length > 0 ? {...userFound[0], loggedIn:true } : {}};
+            return { ...state, loggedInUser: userFound.length > 0 ? [userFound[0]] : []};
         case 'LOGOUT_USER':
-            return { ...state, loggedInUser: {} };
+            return { ...state, loggedInUser:[]};
         default:
             return state;
     }

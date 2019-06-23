@@ -1,3 +1,3 @@
 ## Pokecommerce
 
-Pokemart created by Daniel Garcia, 2019.
+Project made by Daniel Garcia, using ReactJS, Redux and nostalgic-css.  
