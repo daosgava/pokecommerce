@@ -4,6 +4,9 @@ import './PokeItemsList.css';
 const PokeItem = lazy(() => import('../PokeItem/PokeItem'));
 
 class PokeItemsList extends React.Component{
+    state = {
+        showSideBar : true
+    }
     componentDidMount(){
         this.props.fetchPokeItems();
     }
@@ -29,6 +32,17 @@ class PokeItemsList extends React.Component{
                                                         </div>
                                                 
                                                     :   <div id="content">
+                                                            {
+                                                                (addedToCart.length > 0 && !this.state.showSideBar) && 
+                                                                
+                                                                <section className="message -right">
+                                                                    <div className="nes-balloon from-right">
+                                                                        <p>Items in your <button className="show-side-bar" onClick={()=>this.setState((state)=>({showSideBar: !state.showSideBar}))}>cart  <i className="nes-icon trophy is-small"></i></button>.</p>
+                                                                    </div>
+                                                                    <i className="nes-squirtle"></i>
+                                                                </section>
+                                                                
+                                                            }
                                                             <p className='section-title'>ITEMS AVAILABLE</p>
                                                             <div className='pokelist-container'>
                                                                 {
@@ -39,15 +53,16 @@ class PokeItemsList extends React.Component{
                             }
 
                             {   
-                                addedToCart.length > 0 &&
+                                (addedToCart.length > 0 && this.state.showSideBar) &&
                                 <div id="sidebar">
+                                    <button className="close-side-bar" onClick={()=>this.setState((state)=>({showSideBar: !state.showSideBar}))}><i className="nes-icon close is-small"></i></button>
                                     <p className='section-title'>CART</p>
                                     <div className='cart-container'>
                                         {
-                                            addedToCart.length > 0 ? addedToCart.map((item, index)=>{
+                                            addedToCart.length > 0 && addedToCart.map((item, index)=>{
                                                                     totalItemsAddedToCart +=item.cost*item.quantity; 
+                                                                    totalQuantity += item.quantity;
                                                                     return<PokeItem key={index} {...item} removeFromCart={this.handleRemoveFromCart} updateCart={this.handleUpdatePokeItemInCart}/> }) 
-                                                                    : ''
                                         }
                                     </div>
                                     <p className='fixed'>Total: {totalItemsAddedToCart} <i className="nes-icon coin is-small"></i> <MainButton text='Pay' icon={<><i className="fa fa-money" aria-hidden="true"></i></>} extraClasses='is-success'/></p>

@@ -1,7 +1,10 @@
 .cell {
     padding: 1rem 0rem 0rem;
     margin: 1em;
-    text-align: center;
+    width: 300px;
+    min-height: 220px;
+    vertical-align: top;
+    display: inline-block;
 }
 
 .bottom-down{
