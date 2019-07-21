@@ -43,10 +43,6 @@ class MainLayout extends React.Component {
                             }
                         </div>
                     </div>
-                    
-                    <div className='content'>
-                        {this.props.children}
-                    </div>
                 </React.Fragment> );
     }
 }
