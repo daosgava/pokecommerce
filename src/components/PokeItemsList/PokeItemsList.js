@@ -61,7 +61,6 @@ class PokeItemsList extends React.Component{
                                         {
                                             addedToCart.length > 0 && addedToCart.map((item, index)=>{
                                                                     totalItemsAddedToCart +=item.cost*item.quantity; 
-                                                                    totalQuantity += item.quantity;
                                                                     return<PokeItem key={index} {...item} removeFromCart={this.handleRemoveFromCart} updateCart={this.handleUpdatePokeItemInCart}/> }) 
                                         }
                                     </div>
